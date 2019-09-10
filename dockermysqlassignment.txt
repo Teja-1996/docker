@@ -1,0 +1,23 @@
+first created an ec2 instance and login into it using putty by convering a pem file to ppk.
+After that installed docker on ec2 instance
+commands:
+Sudo apt install docker.io
+sudo docker version(able to see both client sand server)
+docker version(it doesnt show server)
+sudo usermod -aG docker ubuntu(Here group name is docker and user is ubuntu)
+docker pull mysql(created an image of mysql by downloading)
+docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password mysql(created a process or container -d refers to detatched mode and -p refers to port mapping -e refers 
+environment variables )
+docker container ls(we can observe a container is created)
+asked for docker credentials 
+docker login (entrred user id and password)
+docker exec -it f41b02d9504c bash(so that we can enter into container)
+mysql -u root -p(login into my sql)
+show databases;(It will list out databases present in it)
+CREATE DATABASE  Employee;
+use employee;
+create table Info (EmpId INT, First_Name VARCHAR(20),Last_Name VARCHAR(20),Address VARCHAR(20),City VARCHAR(15), Department VARCHAR(10),Salary INT);
+insert into Info values ( "1" , "Tom" , "Parker" , "WestStreet" , "Las Vegas" , "Accounts" , 1000 );
+select * from Info;
+exit(come out of mysql)
+exit(come out of bash)
